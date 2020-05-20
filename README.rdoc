@@ -25,3 +25,5 @@ Setup:
 * rails s
 
 Note: Users, events and tickets for the respective events are created via seed file present under /db/seeds
+
+* Only unit spec are added
