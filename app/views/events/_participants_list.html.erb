@@ -1,0 +1,16 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Gender</th>
+    </tr>
+  </thead>
+  <% event.users.each do |user| %>
+    <tbody>
+      <tr class=<%="user-#{user.id}"%>>
+        <td><%= user.name %></td>
+        <td><%= user.gender %></td>
+      </tr>
+    </tbody>
+  <% end %>
+</table>

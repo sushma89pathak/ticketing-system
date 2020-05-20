@@ -1,0 +1,17 @@
+development:
+  adapter: postgresql
+  encoding: utf8
+  database: beecash_development
+  pool: 5
+  username: treniq
+  password: treniq
+  host: localhost
+
+test:
+  adapter: postgresql
+  encoding: utf8
+  database: treniq-test<%= ENV['TEST_ENV_NUMBER'] %>
+  pool: 5
+  username: treniq
+  password: treniq
+  host: localhost

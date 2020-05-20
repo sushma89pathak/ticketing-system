@@ -1,0 +1,5 @@
+$('.event-details').empty();
+$('.event-details').append("<%= escape_javascript(render 'events/event_info', event: @event, tickets: @event.tickets).html_safe %>");
+
+$('.event-participants').empty();
+$('.event-details').append("<%= escape_javascript(render 'events/participants_list', event: @event).html_safe %>");

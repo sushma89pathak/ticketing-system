@@ -1,0 +1,7 @@
+<div class="row event-details">
+  <%= render 'event_info', event: @event, tickets: @event.tickets %>
+</div>
+<br>
+<div class="row event-participants">
+  <%= render 'participants_list', event: @event %>
+</div>

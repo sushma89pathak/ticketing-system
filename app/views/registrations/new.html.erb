@@ -1,0 +1,53 @@
+<%= form_for User.new,  :url => registration_path(@user), :authenticity_token => true,:html => { :autocomplete => "off" } do |f| %>
+  
+   <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@user.errors.count, "error") %> prohibited
+        this user from being saved:
+      </h2>
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+     <%= f.label :name %><br />
+     <%= f.text_field :name, autofocus: true %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.radio_button :gender, 'male', :checked => true %>
+    <%= label :gender, 'male' %>
+    <%= f.radio_button :gender, 'female' %>
+    <%= label :gender, 'female' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %> <br />
+    <%= f.password_field :password, autocomplete: "new-password" %>
+    <% if @minimum_password_length %>
+      <br />
+      <em><%= @minimum_password_length %> characters minimum</em>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Register" %>
+  </div>
+<% end %>
+
+

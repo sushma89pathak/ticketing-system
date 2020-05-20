@@ -1,0 +1,13 @@
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%= event.name.titleize %></h5>
+    <span>Date: <%= event_date(event: event) %></span>
+    <% if event_participation_allowed?(current_user, event) %>
+      <% tickets.each do |ticket| %>
+        <p>Original Ticket Cost: <%= original_ticket_price(ticket: ticket) %></p>
+        <p class="card-text">After Any Discount(s) Amount: <mark><%= show_ticket_price(user: current_user, ticket: ticket) %></mark></p>
+        <div class="cta"><%= event_registration_cta(user: current_user, event: event, ticket: ticket) %></div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
